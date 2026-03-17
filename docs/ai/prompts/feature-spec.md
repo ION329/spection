@@ -54,7 +54,7 @@ Si una feature es demasiado grande, divídela y consulta al ingeniero antes de c
 ## 6. Plantilla obligatoria
 
 Usa exactamente la estructura de `docs/ai/templates/feature-template.md`.
-Lee los comentarios `<!-- Instrucción: ... -->` de la plantilla y síguelos al pie de la letra.
+Sigue las instrucciones marcadas con `> 🤖 **Instrucción para la IA:**` al pie de la letra.
 Incorpora las respuestas del paso de clarificación en las secciones correspondientes:
 - Casos límite → Reglas de Negocio y Flujo de Usuario (flujos de error)
 - Estados y transiciones → Estados y Transiciones

@@ -53,7 +53,7 @@ Reglas para el archivo de tareas:
 ## 6. Plantillas obligatorias
 
 **Spec de Ingeniería:** usa exactamente la estructura de `docs/ai/templates/engineering-template.md`.
-Lee los comentarios `<!-- Instrucción: ... -->` y síguelos al pie de la letra.
+Sigue las instrucciones marcadas con `> 🤖 **Instrucción para la IA:**` al pie de la letra.
 
 **Archivo de Tareas:** usa exactamente la estructura de `docs/ai/templates/tasks-template.md`.
 Sustituye los ejemplos de la plantilla con las tareas reales de esta feature.

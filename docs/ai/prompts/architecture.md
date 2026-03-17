@@ -41,7 +41,7 @@ establece la estrategia de seguridad, o introduce una dependencia externa releva
 ## 5. Plantilla obligatoria
 
 Usa exactamente la estructura de `docs/ai/templates/architecture-template.md`.
-Lee los comentarios `<!-- Instrucción: ... -->` de la plantilla y síguelos al pie de la letra.
+Sigue las instrucciones marcadas con `> 🤖 **Instrucción para la IA:**` al pie de la letra.
 No omitas ninguna sección. Si una sección no aplica, escríbela con "N/A" y justificación.
 
 Para cada ADR generado, usa exactamente la estructura de `docs/ai/templates/adr-template.md`.

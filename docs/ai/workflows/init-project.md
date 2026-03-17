@@ -14,10 +14,13 @@ Sigue las fases en orden. Ninguna fase puede comenzar sin la aprobación explíc
 2. Carga el prompt `docs/ai/prompts/discovery.md`
 3. Responde las preguntas estructuradas del agente
 4. Revisa el borrador generado en `docs/spec/product/product.md`
-5. Ejecuta el prompt de revisión si necesitas una segunda opinión: `docs/ai/prompts/review.md`
+5. Ejecuta `docs/ai/prompts/review.md` si necesitas una segunda opinión antes de validar
 
 > **PUERTA 1 — Aprobación humana requerida**
-> Añade `**Status: Validated**` al inicio de `docs/spec/product/product.md`.
+> Revisa las **Notas de Revisión** al final del documento.
+> Si la revisión arroja notas *críticas*, no valides. Devuelve el documento al agente creador con el prompt:
+> *"Por favor corrige los problemas críticos listados en las notas de revisión"*, y vuelve a revisar.
+> Solo cuando no haya notas críticas: añade `**Status: Validated**` al inicio de `docs/spec/product/product.md`.
 > No abras la siguiente sesión hasta completar este paso.
 > Criterios de aceptación: `docs/ai/agents/product-strategist.md` → sección Handoff.
 
@@ -33,10 +36,13 @@ Sigue las fases en orden. Ninguna fase puede comenzar sin la aprobación explíc
 3. El agente verificará que `docs/spec/product/product.md` tiene `**Status: Validated**`
 4. Revisa el documento generado en `docs/spec/architecture/architecture.md`
 5. Revisa los ADRs generados en `docs/spec/decisions/`
-6. Ejecuta `docs/ai/prompts/review.md` sobre la arquitectura si es necesario
+6. Ejecuta `docs/ai/prompts/review.md` sobre la arquitectura antes de validar
 
 > **PUERTA 2 — Aprobación humana requerida**
-> Añade `**Status: Validated**` al inicio de `docs/spec/architecture/architecture.md`.
+> Revisa las **Notas de Revisión** al final del documento.
+> Si la revisión arroja notas *críticas*, no valides. Devuelve el documento al agente creador con el prompt:
+> *"Por favor corrige los problemas críticos listados en las notas de revisión"*, y vuelve a revisar.
+> Solo cuando no haya notas críticas: añade `**Status: Validated**` al inicio de `docs/spec/architecture/architecture.md`.
 > Verifica que cada ADR generado tiene `status: accepted` o `status: proposed` según corresponda.
 > No abras la siguiente sesión hasta completar este paso.
 > Criterios de aceptación: `docs/ai/agents/software-architect.md` → sección Handoff.
@@ -56,7 +62,10 @@ Sigue las fases en orden. Ninguna fase puede comenzar sin la aprobación explíc
 6. Ejecuta `docs/ai/prompts/review.md` sobre cada feature spec antes de validar
 
 > **PUERTA 3 — Aprobación humana requerida (por cada feature)**
-> Añade `**Status: Validated**` al inicio de cada `docs/spec/features/[feature-name]-spec.md`.
+> Revisa las **Notas de Revisión** al final del documento.
+> Si la revisión arroja notas *críticas*, no valides. Devuelve el documento al agente creador con el prompt:
+> *"Por favor corrige los problemas críticos listados en las notas de revisión"*, y vuelve a revisar.
+> Solo cuando no haya notas críticas: añade `**Status: Validated**` al inicio de cada `docs/spec/features/[feature-name]-spec.md`.
 > Una feature sin validación no puede avanzar a ingeniería.
 > Criterios de aceptación: `docs/ai/agents/systems-engineer.md` → sección Handoff.
 
@@ -74,10 +83,13 @@ Sigue las fases en orden. Ninguna fase puede comenzar sin la aprobación explíc
 5. Revisa la spec de ingeniería generada en `docs/spec/engineering/[feature-name]-engineering.md`
 6. Revisa el archivo de tareas generado en `docs/spec/tasks/[feature-name]-tasks.md`
 7. Verifica que el archivo de tareas tiene tareas en las 4 fases: infra → backend → frontend → pruebas
-8. Ejecuta `docs/ai/prompts/review.md` sobre la spec de ingeniería antes de validar
+8. Ejecuta `docs/ai/prompts/review.md` sobre el engineering spec antes de validar
 
 > **PUERTA 4 — Aprobación humana requerida (por cada feature)**
-> Añade `**Status: Validated**` al inicio de `docs/spec/engineering/[feature-name]-engineering.md`.
+> Revisa las **Notas de Revisión** al final del documento.
+> Si la revisión arroja notas *críticas*, no valides. Devuelve el documento al agente creador con el prompt:
+> *"Por favor corrige los problemas críticos listados en las notas de revisión"*, y vuelve a revisar.
+> Solo cuando no haya notas críticas: añade `**Status: Validated**` al inicio de `docs/spec/engineering/[feature-name]-engineering.md`.
 > Confirma que `docs/spec/tasks/[feature-name]-tasks.md` está completo.
 > No comiences a codificar hasta completar este paso.
 > Criterios de aceptación: `docs/ai/agents/lead-engineer.md` → sección Handoff.
@@ -90,7 +102,37 @@ Antes de escribir una sola línea de código, ejecuta obligatoriamente:
 
 **`docs/ai/workflows/implementation-hygiene.md`**
 
-Una vez completada la implementación y las pruebas, ejecuta:
+---
+
+## Fase 6 — Documentación Pública
+
+**Agente:** `docs/ai/agents/tech-writer.md`
+
+Ejecuta esta fase después de que la implementación esté completa y las pruebas pasen en CI.
+
+1. Abre una sesión nueva de IA
+2. Carga el agente `docs/ai/agents/tech-writer.md`
+3. Indica al agente qué artefactos generar para esta feature (pregunta si no estás seguro)
+4. El agente leerá `docs/spec/features/[feature-name]-spec.md` y `docs/spec/engineering/[feature-name]-engineering.md`
+5. El agente generará los documentos públicos correspondientes en `docs/public/`:
+   - `docs/public/[feature-name]-guide.md` — guía para desarrolladores externos
+   - `docs/public/api-reference.md` — referencia de API pública (acumulativo, actualizar si existe)
+   - `docs/public/onboarding.md` — actualizar si la feature impacta el onboarding
+   - `docs/public/architecture-overview.md` — para el primer ciclo del proyecto (si no existe)
+6. Revisa cada documento: verifica que no expone esquemas internos, estrategias de seguridad ni detalles de infraestructura
+
+> **PUERTA 6 — Aprobación humana requerida (documentación pública)**
+> Revisa cada documento generado en `docs/public/`.
+> Si la revisión arroja notas *críticas*, no valides. Devuelve el documento al agente creador con el prompt:
+> *"Por favor corrige los problemas críticos listados en las notas de revisión"*, y vuelve a revisar.
+> Solo cuando no haya notas críticas: añade `**Status: Validated**` al inicio de cada documento publicado.
+> Criterios de aceptación: `docs/ai/agents/tech-writer.md` → sección Handoff.
+
+---
+
+## Fase 7 — Archivo
+
+Una vez que la implementación, las pruebas y la documentación pública están completas y validadas:
 
 **`docs/ai/workflows/archive-feature.md`**
 
@@ -98,7 +140,7 @@ Una vez completada la implementación y las pruebas, ejecuta:
 
 ## Resumen de archivos generados
 
-Al completar las 4 primeras fases, el proyecto debe tener:
+Al completar todas las fases, el proyecto debe tener:
 
 ```
 docs/spec/
@@ -114,4 +156,9 @@ docs/spec/
 │   └── [feature-name]-engineering.md       ← Status: Validated (por feature)
 └── tasks/
     └── [feature-name]-tasks.md
+
+docs/public/
+├── [feature-name]-guide.md                 ← Status: Validated
+├── api-reference.md                        ← actualizado
+└── architecture-overview.md               ← primer ciclo
 ```

@@ -22,7 +22,7 @@ docs/
 │   ├── features/                    ← especificaciones individuales de features
 │   ├── engineering/                 ← especificaciones de ingeniería listas para implementar
 │   ├── tasks/                       ← desgloses de tareas por feature
-│   └── decisions/                   ← registros de decisiones de arquitectura (ADRs)
+│   └── decisions/                   ← ADRs (Registros de Decisiones de Arquitectura) — reglas vinculantes para la IA
 │
 ├── public/                          ← documentación simplificada para stakeholders
 └── lab/                             ← experimentos, investigación e historial de implementación

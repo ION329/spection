@@ -48,7 +48,7 @@ Documenta la decisión técnica con objetividad. Sigue estas reglas:
 
 Usa exactamente la estructura de `docs/ai/templates/adr-template.md`.
 La cabecera YAML es obligatoria. No elimines ni renombres ningún campo del YAML.
-Lee los comentarios `<!-- Instrucción: ... -->` de la plantilla y síguelos al pie de la letra.
+Sigue las instrucciones marcadas con `> 🤖 **Instrucción para la IA:**` al pie de la letra.
 
 ## 6. Output
 

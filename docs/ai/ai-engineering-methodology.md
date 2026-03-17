@@ -61,14 +61,21 @@ Un contexto contaminado degrada la calidad del código y causa desviación de la
 
 ```
 docs/
-├── ai/       ← cómo colabora la IA en este proyecto
-├── spec/     ← todo el pensamiento técnico del sistema
-├── public/   ← documentación simplificada
-└── lab/      ← experimentos, investigación e historial
+├── ai/       ← motor de la metodología: define cómo se comporta la IA en este proyecto
+├── spec/     ← todo el pensamiento técnico del sistema (la única carpeta que evoluciona)
+│   ├── product/      ← definición de producto y espacio del problema
+│   ├── architecture/ ← arquitectura del sistema y stack tecnológico
+│   ├── features/     ← especificaciones funcionales por feature
+│   ├── engineering/  ← contratos técnicos implementables por feature
+│   ├── tasks/        ← desgloses de tareas ordenados por dependencias
+│   └── decisions/    ← ADRs: cada decisión técnica significativa registrada como regla vinculante para la IA
+├── public/   ← documentación simplificada para stakeholders y desarrolladores externos
+└── lab/      ← experimentos, investigación e historial de features archivadas
 ```
 
 `docs/ai/` es el motor de la metodología. Su contenido define cómo se comporta la IA en este proyecto.
 `docs/spec/` contiene toda la documentación específica del proyecto generada por la IA y validada por el ingeniero.
+`docs/spec/decisions/` es especialmente crítica: cada ADR con `status: accepted` es una restricción vinculante que la IA debe respetar en todas las sesiones de arquitectura e ingeniería. No son sugerencias.
 `docs/spec/` es la única carpeta que cambia conforme el proyecto evoluciona.
 
 ---
