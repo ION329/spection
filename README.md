@@ -58,6 +58,9 @@ Cada transición de fase requiere la aprobación explícita del ingeniero (`**St
 **Añadir una feature a un proyecto existente:**
 - `docs/ai/workflows/create-feature.md`
 
+**Documentar un proyecto legacy o existente (Ingeniería Inversa):**
+- `docs/ai/workflows/reverse-engineering.md`
+
 **Antes de escribir cualquier código:**
 - `docs/ai/workflows/implementation-hygiene.md`
 
