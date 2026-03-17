@@ -1,11 +1,11 @@
-# Engineering Specification
+# Especificación de Ingeniería
 
 <!-- Instrucción: Este documento convierte la especificación de feature en contratos técnicos
 implementables. Lee docs/spec/features/[feature]-spec.md y docs/spec/architecture/architecture.md
-antes de completar este template. Cada decisión aquí debe ser trazable a la feature spec o a un ADR aceptado.
+antes de completar esta plantilla. Cada decisión aquí debe ser trazable a la feature spec o a un ADR aceptado.
 Al terminar este documento, genera también docs/spec/tasks/[feature]-tasks.md. -->
 
-## API Contracts
+## Contratos de API
 
 <!-- Instrucción: Define los contratos completos de cada endpoint de la feature.
 Para cada endpoint usa exactamente este formato:
@@ -13,33 +13,33 @@ Para cada endpoint usa exactamente este formato:
 ---
 **[MÉTODO] /ruta/completa**
 ```
-Request Headers:
+Cabeceras de Solicitud:
   Authorization: Bearer <token>  (si aplica)
   Content-Type: application/json
 
-Request Body:
+Cuerpo de Solicitud:
   {
     "campo": "tipo"  // descripción, requerido/opcional, validaciones
   }
 
-Response 200:
+Respuesta 200:
   {
     "campo": "tipo"  // descripción
   }
 
-Response 400: { "error": "descripción del error de validación" }
-Response 401: { "error": "no autenticado" }
-Response 403: { "error": "no autorizado" }
-Response 404: { "error": "recurso no encontrado" }
-Response 500: { "error": "error interno del servidor" }
+Respuesta 400: { "error": "descripción del error de validación" }
+Respuesta 401: { "error": "no autenticado" }
+Respuesta 403: { "error": "no autorizado" }
+Respuesta 404: { "error": "recurso no encontrado" }
+Respuesta 500: { "error": "error interno del servidor" }
 ```
 ---
 
 Incluye todos los códigos de error posibles por endpoint. No uses "etc." ni omitas casos. -->
 
-## Database Schema
+## Esquema de Base de Datos
 
-<!-- Instrucción: Define el schema completo de base de datos para esta feature.
+<!-- Instrucción: Define el esquema completo de base de datos para esta feature.
 Para cada tabla o colección usa este formato:
 
 **Tabla: [nombre_tabla]**
@@ -58,10 +58,10 @@ Relaciones:
 
 No uses tipos genéricos como "string" o "number". Usa tipos específicos del motor de base de datos aprobado. -->
 
-## State Management
+## Gestión de Estado
 
 <!-- Instrucción: Define el estado del lado del cliente para esta feature.
-Si la feature es backend-only, escribe "N/A — feature de backend puro" y omite el resto.
+Si la feature es solo de backend, escribe "N/A — feature de backend puro" y omite el resto.
 
 Para features con frontend, define:
 
@@ -77,7 +77,7 @@ Para features con frontend, define:
 **Acciones / Mutations:**
 - [NOMBRE_ACCION]: qué hace, qué payload recibe, qué estado modifica
 
-**Estados derivados (selectors/computed):**
+**Estados derivados (selectores/computados):**
 - [nombre]: qué calcula y cuándo se usa
 
 **Estados de carga:**
@@ -85,10 +85,10 @@ Para features con frontend, define:
 - error: string | null — qué errores se almacenan
 - data: tipo — qué estructura tiene el dato cargado -->
 
-## UI Components
+## Componentes de UI
 
 <!-- Instrucción: Lista los componentes de UI que esta feature requiere.
-Si la feature es backend-only, escribe "N/A" y omite el resto.
+Si la feature es solo de backend, escribe "N/A" y omite el resto.
 
 Para cada componente usa este formato:
 
@@ -102,19 +102,19 @@ Para cada componente usa este formato:
 
 Ordena los componentes de más genérico a más específico (átomos antes que organismos). -->
 
-## Test Plan
+## Plan de Pruebas
 
 <!-- Instrucción: Define cómo se va a probar esta feature. Esta sección es obligatoria.
 Cubre las tres categorías:
 
-**Unit tests:**
+**Pruebas unitarias:**
 - [función o método]: qué se prueba y qué casos se cubren
 
-**Integration tests:**
+**Pruebas de integración:**
 - [endpoint o flujo]: qué se prueba de extremo a extremo
 
-**Edge cases a cubrir:**
-- Lista de condiciones límite que deben tener test explícito
+**Casos límite a cubrir:**
+- Lista de condiciones límite que deben tener prueba explícita
 
-No escribas el código de los tests aquí. Define los casos y la cobertura esperada.
-Los tests se implementan en el tasks file, no en este documento. -->
+No escribas el código de las pruebas aquí. Define los casos y la cobertura esperada.
+Las pruebas se implementan en el archivo de tareas, no en este documento. -->

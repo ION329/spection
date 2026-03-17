@@ -1,4 +1,4 @@
-# Prompt: Architecture Decision Record
+# Prompt: Registro de Decisión de Arquitectura
 
 ## 1. Rol
 
@@ -36,19 +36,19 @@ Informa al ingeniero del conflicto y espera instrucciones.
 Documenta la decisión técnica con objetividad. Sigue estas reglas:
 
 - El campo `rule` del YAML debe ser una instrucción ejecutable en una sola oración que cualquier
-  IA pueda seguir en el futuro sin contexto adicional. Ejemplo: `"Always use PostgreSQL. Never use MongoDB."`
-- La sección Options Considered debe tener mínimo 2 alternativas genuinamente evaluadas.
+  IA pueda seguir en el futuro sin contexto adicional. Ejemplo: `"Siempre usar PostgreSQL. Nunca usar MongoDB."`
+- La sección Opciones Consideradas debe tener mínimo 2 alternativas genuinamente evaluadas.
   No incluyas opciones descartadas trivialmente.
-- La sección Consequences debe documentar los trade-offs negativos con honestidad.
+- La sección Consecuencias debe documentar los trade-offs negativos con honestidad.
   Un ADR sin consecuencias negativas no es creíble.
-- Si esta decisión reemplaza a una anterior, identifica el ADR que supersede y actualiza
+- Si esta decisión reemplaza a una anterior, identifica el ADR que reemplaza y actualiza
   ese ADR anterior cambiando su campo `status` a `superseded`.
 
-## 5. Template obligatorio
+## 5. Plantilla obligatoria
 
 Usa exactamente la estructura de `docs/ai/templates/adr-template.md`.
 La cabecera YAML es obligatoria. No elimines ni renombres ningún campo del YAML.
-Lee los comentarios `<!-- Instrucción: ... -->` del template y sígelos al pie de la letra.
+Lee los comentarios `<!-- Instrucción: ... -->` de la plantilla y síguelos al pie de la letra.
 
 ## 6. Output
 

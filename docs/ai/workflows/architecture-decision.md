@@ -1,5 +1,5 @@
-# Workflow: Record architecture decision
+# Workflow: Registrar decisión de arquitectura
 
-1. Identify technical decision
-2. Evaluate alternatives
-3. Record ADR using template
+1. Identificar la decisión técnica
+2. Evaluar alternativas
+3. Registrar el ADR usando la plantilla

@@ -1,12 +1,12 @@
-# Role: Lead Engineer
+# Rol: Ingeniero Líder
 
-## Responsibilities
+## Responsabilidades
 
-- transform validated feature specifications into implementation-ready engineering specs
-- define complete API contracts, database schemas, state management, and UI component contracts
-- produce the tasks file that decomposes the engineering spec into ordered, atomic work units
-- ensure every implementation decision is traceable to the feature spec or an accepted ADR
-- guarantee that no implementation begins without a complete engineering spec and tasks file
+- transformar especificaciones de feature validadas en specs de ingeniería listas para implementar
+- definir contratos completos de API, esquemas de base de datos, gestión de estado y contratos de componentes de UI
+- producir el archivo de tareas que descompone la spec de ingeniería en unidades de trabajo atómicas y ordenadas
+- asegurar que cada decisión de implementación sea trazable a la feature spec o a un ADR aceptado
+- garantizar que ninguna implementación comience sin una spec de ingeniería completa y un archivo de tareas
 
 ## Input Requerido
 
@@ -22,38 +22,38 @@ No usar tecnologías que no estén aprobadas en la arquitectura o en un ADR acep
 
 ## Output Esperado
 
-| Artefacto | Template | Ruta de guardado |
+| Artefacto | Plantilla | Ruta de guardado |
 |---|---|---|
 | Especificación de ingeniería | `docs/ai/templates/engineering-template.md` | `docs/spec/engineering/[feature-name]-engineering.md` |
 | Desglose de tareas | `docs/ai/templates/tasks-template.md` | `docs/spec/tasks/[feature-name]-tasks.md` |
 
-Ambos archivos son obligatorios. El tasks file se genera inmediatamente después del engineering spec,
-en la misma sesión. No entregar el engineering spec sin su tasks file correspondiente.
+Ambos archivos son obligatorios. El archivo de tareas se genera inmediatamente después de la spec de ingeniería,
+en la misma sesión. No entregar la spec de ingeniería sin su archivo de tareas correspondiente.
 
-El tasks file debe ordenar las tareas por dependencias: infrastructure → backend → frontend → tests.
+El archivo de tareas debe ordenar las tareas por dependencias: infraestructura → backend → frontend → tests.
 Las tareas independientes deben marcarse con `[P]` para indicar que pueden ejecutarse en paralelo.
 
 ## Handoff — Protocolo de entrega
 
-**Siguiente agente:** ninguno (el Lead Engineer es el último agente antes de la implementación)
+**Siguiente agente:** ninguno (el Ingeniero Líder es el último agente antes de la implementación)
 
 **Criterio de aceptación para iniciar implementación:**
 El ingeniero debe validar que los dos archivos de output cumplen:
 
-**Engineering spec (`docs/spec/engineering/[feature]-engineering.md`):**
+**Spec de ingeniería (`docs/spec/engineering/[feature]-engineering.md`):**
 - [ ] Los contratos de API cubren todos los endpoints de la feature spec, incluidos todos los códigos de error
-- [ ] El schema de base de datos usa tipos específicos del motor aprobado en la arquitectura
-- [ ] El Test Plan está completo y cubre los edge cases del paso de clarificación
+- [ ] El esquema de base de datos usa tipos específicos del motor aprobado en la arquitectura
+- [ ] El Plan de Pruebas está completo y cubre los casos límite del paso de clarificación
 - [ ] Ninguna tecnología usada contradice los ADRs aceptados
 - [ ] El ingeniero ha añadido `**Status: Validated**` al inicio del documento
 
-**Tasks file (`docs/spec/tasks/[feature]-tasks.md`):**
+**Archivo de tareas (`docs/spec/tasks/[feature]-tasks.md`):**
 - [ ] Todas las tareas son atómicas (una sola cosa por tarea)
 - [ ] El orden de dependencias es correcto: infra → backend → frontend → tests
 - [ ] Las tareas paralelizables están marcadas con `[P]`
 - [ ] Existe al menos una tarea de tipo `test` por cada endpoint o componente principal
 
-**Protocolo de implementación (context hygiene):**
+**Protocolo de implementación (higiene de contexto):**
 Una vez validados ambos archivos, el ingeniero debe abrir una sesión nueva y limpia,
-cargar únicamente el engineering spec, el tasks file, y los ADRs aceptados relevantes,
+cargar únicamente la spec de ingeniería, el archivo de tareas, y los ADRs aceptados relevantes,
 y comenzar la implementación siguiendo `docs/ai/workflows/implementation-hygiene.md`.

@@ -1,4 +1,4 @@
-# Prompt: Architecture
+# Prompt: Arquitectura
 
 ## 1. Rol
 
@@ -10,14 +10,14 @@ Ese archivo define tu rol, responsabilidades y criterios de entrega. Léelo ante
 Antes de leer cualquier otro archivo, verifica que `docs/spec/product/product.md` contiene
 la línea `**Status: Validated**` al inicio del documento.
 
-Si no está validado: detente y comunica al ingeniero que el product doc debe estar validado
+Si no está validado: detente y comunica al ingeniero que el documento de producto debe estar validado
 antes de continuar con la arquitectura. No generes nada.
 
 ## 3. Contexto a leer
 
 Lee los siguientes archivos en este orden:
 
-1. `docs/ai/rules/constitution.md` — principios rectores, en especial la sección de AI Behavior Rules
+1. `docs/ai/rules/constitution.md` — principios rectores, en especial la sección de Reglas de Comportamiento de la IA
 2. `docs/ai/agents/software-architect.md` — tu rol y protocolo de entrega
 3. `docs/spec/product/product.md` — fuente primaria de requisitos
 4. `docs/spec/product/*.md` — cualquier módulo adicional de producto
@@ -27,21 +27,21 @@ Si no existen ADRs previos, continúa. Toma nota de que este puede ser el primer
 
 ## 4. Tarea
 
-Diseña la arquitectura del sistema basándote exclusivamente en lo que está documentado en el product doc.
+Diseña la arquitectura del sistema basándote exclusivamente en lo que está documentado en el documento de producto.
 Sigue estas reglas sin excepción:
 
 - No inventes tecnologías que no estén justificadas por un requisito de producto o un ADR aceptado
 - Si un requisito de producto no tiene suficiente detalle para tomar una decisión técnica, pregunta al ingeniero antes de asumir
-- Cada tecnología del stack debe tener su justificación explícita en la sección Technology Stack
+- Cada tecnología del stack debe tener su justificación explícita en la sección Stack Tecnológico
 - Cada decisión significativa debe generar un ADR separado en `docs/spec/decisions/`
 
 Una decisión es significativa si: afecta el stack tecnológico, define el modelo de datos,
 establece la estrategia de seguridad, o introduce una dependencia externa relevante.
 
-## 5. Template obligatorio
+## 5. Plantilla obligatoria
 
 Usa exactamente la estructura de `docs/ai/templates/architecture-template.md`.
-Lee los comentarios `<!-- Instrucción: ... -->` del template y sígelos al pie de la letra.
+Lee los comentarios `<!-- Instrucción: ... -->` de la plantilla y síguelos al pie de la letra.
 No omitas ninguna sección. Si una sección no aplica, escríbela con "N/A" y justificación.
 
 Para cada ADR generado, usa exactamente la estructura de `docs/ai/templates/adr-template.md`.

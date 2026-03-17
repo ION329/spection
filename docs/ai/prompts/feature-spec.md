@@ -1,4 +1,4 @@
-# Prompt: Feature Specification
+# Prompt: Especificación de Feature
 
 ## 1. Rol
 
@@ -51,14 +51,14 @@ Una vez recibidas las respuestas de clarificación, genera una especificación p
 Una feature = un archivo. No combines múltiples features en un solo archivo.
 Si una feature es demasiado grande, divídela y consulta al ingeniero antes de continuar.
 
-## 6. Template obligatorio
+## 6. Plantilla obligatoria
 
 Usa exactamente la estructura de `docs/ai/templates/feature-template.md`.
-Lee los comentarios `<!-- Instrucción: ... -->` del template y sígelos al pie de la letra.
+Lee los comentarios `<!-- Instrucción: ... -->` de la plantilla y síguelos al pie de la letra.
 Incorpora las respuestas del paso de clarificación en las secciones correspondientes:
-- Casos límite → Business Rules y User Flow (flujos de error)
-- Estados y transiciones → States and Transitions
-- Dependencias externas → Dependencies
+- Casos límite → Reglas de Negocio y Flujo de Usuario (flujos de error)
+- Estados y transiciones → Estados y Transiciones
+- Dependencias externas → Dependencias
 
 ## 7. Output
 

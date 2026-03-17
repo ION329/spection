@@ -1,4 +1,4 @@
-# Prompt: Discovery
+# Prompt: Descubrimiento
 
 ## 1. Rol
 
@@ -32,17 +32,17 @@ Numera cada pregunta. Espera las respuestas antes de avanzar.
 No hagas preguntas adicionales sin permiso del ingeniero.
 Si una respuesta es ambigua, pide clarificación sobre esa respuesta específica antes de continuar.
 
-## 4. Template obligatorio
+## 4. Plantilla obligatoria
 
 Usa exactamente la estructura de `docs/ai/templates/product-template.md`.
-No omitas ninguna sección. No añadas secciones que no estén en el template.
+No omitas ninguna sección. No añadas secciones que no estén en la plantilla.
 Si una sección no aplica, escríbela con "N/A" y una justificación de una línea.
 
 ## 5. Output
 
 - **Ruta:** `docs/spec/product/product.md`
 - **Convención de nombres:** si el proyecto tiene múltiples módulos, crear un archivo por módulo usando el patrón `docs/spec/product/[nombre-modulo].md` en kebab-case
-- **Formato:** Markdown, siguiendo el template sin modificaciones estructurales
+- **Formato:** Markdown, siguiendo la plantilla sin modificaciones estructurales
 
 No guardes el archivo hasta haber recibido todas las respuestas del ingeniero.
 Confirma la ruta de guardado antes de escribir.

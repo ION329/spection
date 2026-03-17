@@ -1,6 +1,6 @@
-# Workflow: Reverse engineer existing project
+# Workflow: Ingeniería inversa de un proyecto existente
 
-1. Analyze repository structure
-2. Detect modules and services
-3. Reconstruct architecture documentation
-4. Generate feature specs from code
+1. Analizar la estructura del repositorio
+2. Detectar módulos y servicios
+3. Reconstruir la documentación de arquitectura
+4. Generar specs de features a partir del código

@@ -1,7 +1,7 @@
-# Workflow: Archive Feature
+# Workflow: Archivar Feature
 
 Ejecuta este workflow cuando una feature está completamente implementada, testeada y mergeada.
-Su propósito es mantener `docs/spec/` limpio y activo, moviéndola documentación de trabajo
+Su propósito es mantener `docs/spec/` limpio y activo, moviendo la documentación de trabajo
 ya consumida a `docs/lab/history/`.
 
 Un directorio `docs/spec/` con specs viejas de features ya implementadas es ruido cognitivo.
@@ -14,9 +14,9 @@ Contamina las sesiones de IA con contexto obsoleto y dificulta encontrar lo que 
 Antes de archivar, confirma que la feature cumple estos criterios:
 
 - [ ] El código está mergeado en la rama principal
-- [ ] Los tests pasan en CI
-- [ ] La feature fue revisada y aprobada (code review completo)
-- [ ] Si aplica: la documentación pública fue generada (`docs/ai/workflows/` → Tech Writer)
+- [ ] Las pruebas pasan en CI
+- [ ] La feature fue revisada y aprobada (revisión de código completa)
+- [ ] Si aplica: la documentación pública fue generada (`docs/ai/workflows/` → Escritor Técnico)
 
 Si algún punto no está cumplido, no archives todavía.
 
@@ -28,9 +28,9 @@ Antes de mover archivos, abre `docs/lab/history/index.md`.
 Si no existe, créalo con esta estructura:
 
 ```markdown
-# History Index
+# Índice del Historial
 
-| Feature | Fecha de archivo | Engineering Spec | Tasks File | Notas |
+| Feature | Fecha de archivo | Spec de Ingeniería | Archivo de Tareas | Notas |
 |---|---|---|---|---|
 ```
 
@@ -40,11 +40,11 @@ Añade una fila con los datos de la feature que vas a archivar:
 |---|---|
 | Feature | nombre de la feature en kebab-case |
 | Fecha de archivo | fecha actual en formato YYYY-MM-DD |
-| Engineering Spec | ruta original del archivo |
-| Tasks File | ruta original del archivo |
+| Spec de Ingeniería | ruta original del archivo |
+| Archivo de Tareas | ruta original del archivo |
 | Notas | cualquier observación relevante (deuda técnica pendiente, decisiones tomadas durante implementación, etc.) |
 
-### Paso 2 — Mover el engineering spec
+### Paso 2 — Mover la spec de ingeniería
 
 Mueve el archivo:
 ```
@@ -53,7 +53,7 @@ docs/spec/engineering/[feature-name]-engineering.md
 docs/lab/history/[feature-name]-engineering.md
 ```
 
-### Paso 3 — Mover el tasks file
+### Paso 3 — Mover el archivo de tareas
 
 Mueve el archivo:
 ```
@@ -88,9 +88,9 @@ Después de mover los archivos, revisa:
 Haz un commit específico para el archivado con el mensaje:
 
 ```
-archive: move [feature-name] specs to lab/history
+archive: mover specs de [feature-name] a lab/history
 
-Feature implemented and tested. Engineering spec and tasks file archived.
+Feature implementada y testeada. Spec de ingeniería y archivo de tareas archivados.
 ```
 
 ---

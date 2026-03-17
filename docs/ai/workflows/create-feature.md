@@ -1,7 +1,7 @@
-# Workflow: Create a new feature
+# Workflow: Crear una nueva feature
 
 Usa este workflow cuando el proyecto ya tiene arquitectura validada y necesitas añadir
-una feature nueva. Si es el primer feature del proyecto, usa `init-project.md`.
+una feature nueva. Si es la primera feature del proyecto, usa `init-project.md`.
 
 ---
 
@@ -17,7 +17,7 @@ Si la nueva feature requiere un cambio de arquitectura, ejecuta primero
 
 ---
 
-## Fase 1 — Feature Specification
+## Fase 1 — Especificación de Feature
 
 **Prompt a usar:** `docs/ai/prompts/feature-spec.md`
 **Agente:** `docs/ai/agents/systems-engineer.md`
@@ -29,14 +29,14 @@ Si la nueva feature requiere un cambio de arquitectura, ejecuta primero
 5. Revisa la spec generada en `docs/spec/features/[feature-name]-spec.md`
 6. Ejecuta `docs/ai/prompts/review.md` sobre la feature spec antes de validar
 
-> **GATE 1 — Aprobación humana requerida**
+> **PUERTA 1 — Aprobación humana requerida**
 > Añade `**Status: Validated**` al inicio de `docs/spec/features/[feature-name]-spec.md`.
 > No abras la siguiente sesión hasta completar este paso.
 > Criterios de aceptación: `docs/ai/agents/systems-engineer.md` → sección Handoff.
 
 ---
 
-## Fase 2 — Engineering Specification + Tasks
+## Fase 2 — Especificación de Ingeniería + Tareas
 
 **Prompt a usar:** `docs/ai/prompts/engineering.md`
 **Agente:** `docs/ai/agents/lead-engineer.md`
@@ -45,17 +45,17 @@ Si la nueva feature requiere un cambio de arquitectura, ejecuta primero
 2. Carga el prompt `docs/ai/prompts/engineering.md`
 3. Indica al agente el nombre exacto de la feature: `[feature-name]`
 4. El agente verificará el `**Status: Validated**` de la feature spec automáticamente
-5. Revisa el engineering spec: `docs/spec/engineering/[feature-name]-engineering.md`
-6. Revisa el tasks file: `docs/spec/tasks/[feature-name]-tasks.md`
-7. Verifica la estructura del tasks file:
-   - [ ] Fase 1 — Infrastructure definida
+5. Revisa la spec de ingeniería: `docs/spec/engineering/[feature-name]-engineering.md`
+6. Revisa el archivo de tareas: `docs/spec/tasks/[feature-name]-tasks.md`
+7. Verifica la estructura del archivo de tareas:
+   - [ ] Fase 1 — Infraestructura definida
    - [ ] Fase 2 — Backend con orden: modelos → servicios → controllers → rutas
    - [ ] Fase 3 — Frontend con orden: átomos → compuestos → vistas → store → API
-   - [ ] Fase 4 — Tests con al menos un test por endpoint y por componente principal
+   - [ ] Fase 4 — Pruebas con al menos una prueba por endpoint y por componente principal
    - [ ] Tareas paralelizables marcadas con `[P]`
-8. Ejecuta `docs/ai/prompts/review.md` sobre el engineering spec antes de validar
+8. Ejecuta `docs/ai/prompts/review.md` sobre la spec de ingeniería antes de validar
 
-> **GATE 2 — Aprobación humana requerida**
+> **PUERTA 2 — Aprobación humana requerida**
 > Añade `**Status: Validated**` al inicio de `docs/spec/engineering/[feature-name]-engineering.md`.
 > Confirma que `docs/spec/tasks/[feature-name]-tasks.md` tiene todas las fases completas.
 > No comiences a codificar hasta completar este paso.
@@ -63,7 +63,7 @@ Si la nueva feature requiere un cambio de arquitectura, ejecuta primero
 
 ---
 
-## Fase 3 — Implementation
+## Fase 3 — Implementación
 
 Antes de escribir una sola línea de código, ejecuta obligatoriamente:
 
@@ -71,7 +71,7 @@ Antes de escribir una sola línea de código, ejecuta obligatoriamente:
 
 ---
 
-## Fase 4 — Archive
+## Fase 4 — Archivo
 
 Una vez que la feature está implementada, testeada y mergeada:
 

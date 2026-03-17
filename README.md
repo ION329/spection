@@ -1,65 +1,65 @@
 # Spection
 
-Spec-Driven Development. The specification is the source of truth.
-Code is a direct consequence of documentation.
+Desarrollo Guiado por Especificación. La especificación es la fuente de verdad.
+El código es una consecuencia directa de la documentación.
 
-## Structure
+## Estructura
 
 ```
 docs/
-├── ai/                              ← methodology engine (framework rules, do not modify per-project)
-│   ├── ai-engineering-methodology.md   ← canonical methodology document
-│   ├── agents/                      ← AI role definitions
-│   ├── prompts/                     ← executable prompts with input/output contracts
-│   ├── templates/                   ← document templates
-│   ├── workflows/                   ← step-by-step process guides
-│   └── rules/                       ← governance and constitutional rules
-│       └── constitution.md          ← non-negotiable engineering principles
+├── ai/                              ← motor de metodología (reglas del framework, no modificar por proyecto)
+│   ├── ai-engineering-methodology.md   ← documento canónico de la metodología
+│   ├── agents/                      ← definiciones de roles de IA
+│   ├── prompts/                     ← prompts ejecutables con contratos de entrada/salida
+│   ├── templates/                   ← plantillas de documentos
+│   ├── workflows/                   ← guías de procesos paso a paso
+│   └── rules/                       ← gobernanza y reglas constitucionales
+│       └── constitution.md          ← principios de ingeniería no negociables
 │
-├── spec/                            ← project specs (AI-generated, engineer-validated)
-│   ├── product/                     ← product definition and problem space
-│   ├── architecture/                ← system architecture and tech stack
-│   ├── features/                    ← individual feature specifications
-│   ├── engineering/                 ← implementation-ready engineering specs
-│   ├── tasks/                       ← task breakdowns per feature
-│   └── decisions/                   ← architecture decision records (ADRs)
+├── spec/                            ← especificaciones del proyecto (generadas por IA, validadas por el ingeniero)
+│   ├── product/                     ← definición de producto y espacio del problema
+│   ├── architecture/                ← arquitectura del sistema y stack tecnológico
+│   ├── features/                    ← especificaciones individuales de features
+│   ├── engineering/                 ← especificaciones de ingeniería listas para implementar
+│   ├── tasks/                       ← desgloses de tareas por feature
+│   └── decisions/                   ← registros de decisiones de arquitectura (ADRs)
 │
-├── public/                          ← simplified documentation for stakeholders
-└── lab/                             ← experiments, research, and implementation history
-    └── history/                     ← archived specs of implemented features
+├── public/                          ← documentación simplificada para stakeholders
+└── lab/                             ← experimentos, investigación e historial de implementación
+    └── history/                     ← especificaciones archivadas de features implementadas
 ```
 
-## How it works
+## Cómo funciona
 
-Spection runs a pipeline of specialized AI agents. Each phase produces a validated document
-before the next one begins. No phase can be skipped.
+Spection ejecuta un pipeline de agentes de IA especializados. Cada fase produce un documento validado
+antes de que comience la siguiente. Ninguna fase puede ser omitida.
 
 ```
-Discovery → Architecture → Feature Spec → Engineering Spec + Tasks → Implementation → Archive
+Descubrimiento → Arquitectura → Spec de Feature → Spec de Ingeniería + Tareas → Implementación → Archivo
 ```
 
-| Agent | Prompt | Output |
+| Agente | Prompt | Salida |
 |---|---|---|
-| Product Strategist | `prompts/discovery.md` | `docs/spec/product/product.md` |
-| Software Architect | `prompts/architecture.md` | `docs/spec/architecture/architecture.md` + ADRs |
-| Systems Engineer | `prompts/feature-spec.md` | `docs/spec/features/[feature]-spec.md` |
-| Lead Engineer | `prompts/engineering.md` | `docs/spec/engineering/[feature]-engineering.md` + `tasks.md` |
-| Technical Writer | `prompts/review.md` | `docs/public/` |
+| Estratega de Producto | `prompts/discovery.md` | `docs/spec/product/product.md` |
+| Arquitecto de Software | `prompts/architecture.md` | `docs/spec/architecture/architecture.md` + ADRs |
+| Ingeniero de Sistemas | `prompts/feature-spec.md` | `docs/spec/features/[feature]-spec.md` |
+| Ingeniero Líder | `prompts/engineering.md` | `docs/spec/engineering/[feature]-engineering.md` + `tasks.md` |
+| Escritor Técnico | `prompts/review.md` | `docs/public/` |
 
-Every phase transition requires explicit engineer approval (`**Status: Validated**`).
+Cada transición de fase requiere la aprobación explícita del ingeniero (`**Status: Validated**`).
 
-## Start here
+## Comienza aquí
 
-**New project:**
-1. Read the methodology: `docs/ai/ai-engineering-methodology.md`
-2. Read the project rules: `docs/ai/rules/constitution.md`
-3. Run the full workflow: `docs/ai/workflows/init-project.md`
+**Proyecto nuevo:**
+1. Lee la metodología: `docs/ai/ai-engineering-methodology.md`
+2. Lee las reglas del proyecto: `docs/ai/rules/constitution.md`
+3. Ejecuta el workflow completo: `docs/ai/workflows/init-project.md`
 
-**Adding a feature to an existing project:**
+**Añadir una feature a un proyecto existente:**
 - `docs/ai/workflows/create-feature.md`
 
-**Before writing any code:**
+**Antes de escribir cualquier código:**
 - `docs/ai/workflows/implementation-hygiene.md`
 
-**After a feature is implemented and merged:**
+**Después de que una feature esté implementada y mergeada:**
 - `docs/ai/workflows/archive-feature.md`

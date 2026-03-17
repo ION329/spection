@@ -1,115 +1,115 @@
-# Spection Constitution
+# Constitución de Spection
 
-These are the non-negotiable principles that govern all engineering decisions in this project.
-Every engineer and every AI session must respect these rules without exception.
-When in doubt, refer to this document before proceeding.
-
----
-
-## I. Specification Integrity
-
-**The spec is the source of truth.**
-If the code contradicts the spec, the code is wrong — not the spec.
-If the spec needs to change, update the spec first, then update the code.
-
-**No feature is implemented without a validated spec.**
-A feature request, a verbal agreement, or a chat message is not a spec.
-The feature does not exist until `docs/spec/features/[feature]-spec.md` exists and is validated.
-
-**No phase may be skipped.**
-The sequence is: Discovery → Architecture → Feature Spec → Engineering Spec → Tasks → Implementation.
-Skipping a phase to move faster always produces rework. It is not permitted.
+Estos son los principios no negociables que gobiernan todas las decisiones de ingeniería en este proyecto.
+Cada ingeniero y cada sesión de IA debe respetar estas reglas sin excepción.
+Cuando haya dudas, consulta este documento antes de proceder.
 
 ---
 
-## II. AI Behavior Rules
+## I. Integridad de la Especificación
 
-**The AI must never hallucinate technologies.**
-The AI may only recommend or use technologies explicitly present in:
+**La spec es la fuente de verdad.**
+Si el código contradice la spec, el código está mal — no la spec.
+Si la spec necesita cambiar, actualiza la spec primero, luego actualiza el código.
+
+**Ninguna feature se implementa sin una spec validada.**
+Una solicitud de feature, un acuerdo verbal o un mensaje de chat no es una spec.
+La feature no existe hasta que `docs/spec/features/[feature]-spec.md` exista y esté validada.
+
+**Ninguna fase puede ser omitida.**
+La secuencia es: Descubrimiento → Arquitectura → Spec de Feature → Spec de Ingeniería → Tareas → Implementación.
+Saltarse una fase para avanzar más rápido siempre produce retrabajo. No está permitido.
+
+---
+
+## II. Reglas de Comportamiento de la IA
+
+**La IA no debe alucinar tecnologías.**
+La IA solo puede recomendar o usar tecnologías explícitamente presentes en:
 - `docs/spec/architecture/architecture.md`
-- An ADR with `status: accepted` in `docs/spec/decisions/`
+- Un ADR con `status: accepted` en `docs/spec/decisions/`
 
-If the AI is uncertain about the approved stack, it must ask before generating.
+Si la IA no está segura del stack aprobado, debe preguntar antes de generar.
 
-**The AI must follow templates exactly.**
-All generated documents must use the templates in `docs/ai/templates/`.
-No section may be omitted without explicit engineer approval.
+**La IA debe seguir las plantillas de forma exacta.**
+Todos los documentos generados deben usar las plantillas en `docs/ai/templates/`.
+Ninguna sección puede omitirse sin la aprobación explícita del ingeniero.
 
-**The AI must save output to the specified path.**
-Every prompt defines an output path. The AI must use that path.
-It must not invent alternative paths or file names.
+**La IA debe guardar la salida en la ruta especificada.**
+Cada prompt define una ruta de salida. La IA debe usar esa ruta.
+No debe inventar rutas o nombres de archivo alternativos.
 
-**The AI must ask before specifying.**
-In the feature specification phase, the AI is required to ask clarifying questions
-before generating a spec. This step is mandatory and cannot be bypassed.
+**La IA debe preguntar antes de especificar.**
+En la fase de especificación de feature, la IA está obligada a hacer preguntas de clarificación
+antes de generar una spec. Este paso es obligatorio y no puede omitirse.
 
-**The AI must not modify validated documents without instruction.**
-Once the engineer has validated a document, the AI must not alter it
-unless the engineer explicitly requests a revision.
-
----
-
-## III. Code Quality Standards
-
-**Every function must do one thing.**
-Functions with multiple responsibilities must be split before merging.
-
-**No magic values in code.**
-All constants must be named and documented. No hardcoded strings, numbers, or URLs in business logic.
-
-**No implementation without a corresponding test plan.**
-Every engineering spec must include a section describing how the feature will be tested.
-The tasks file must include at least one test task.
-
-**Security is not optional.**
-Authentication, authorization, input validation, and data sanitization are not features.
-They are requirements on every endpoint and every user-facing input.
-They must appear in the engineering spec, not be added as afterthoughts.
+**La IA no debe modificar documentos validados sin instrucción.**
+Una vez que el ingeniero ha validado un documento, la IA no debe alterarlo
+a menos que el ingeniero solicite explícitamente una revisión.
 
 ---
 
-## IV. Validation Gates
+## III. Estándares de Calidad de Código
 
-**The engineer is the only one who can approve a phase transition.**
-The AI generates. The engineer validates. Validation is not automatic.
+**Cada función debe hacer una sola cosa.**
+Las funciones con múltiples responsabilidades deben dividirse antes de hacer merge.
 
-**A document is not validated until the engineer explicitly marks it so.**
-The engineer signals validation by either:
-- Appending `**Status: Validated**` at the top of the document, or
-- Moving the workflow forward via explicit instruction
+**No se permiten valores mágicos en el código.**
+Todas las constantes deben tener nombre y estar documentadas. No se permiten cadenas de texto, números o URLs hardcodeados en la lógica de negocio.
 
-**Review notes must be resolved before advancing.**
-If a `## Review Notes` section exists in a spec with unresolved `critical` items,
-that spec cannot advance to the next phase.
+**No hay implementación sin un plan de pruebas correspondiente.**
+Cada spec de ingeniería debe incluir una sección que describa cómo se probará la feature.
+El archivo de tareas debe incluir al menos una tarea de prueba.
+
+**La seguridad no es opcional.**
+Autenticación, autorización, validación de entradas y sanitización de datos no son features.
+Son requisitos en cada endpoint y cada input del usuario.
+Deben aparecer en la spec de ingeniería, no ser añadidos como algo secundario.
 
 ---
 
-## V. Context Hygiene
+## IV. Puertas de Validación
 
-**Every implementation session starts with a clean context.**
-Before coding, close all active AI chats. Open a new session.
-Load only:
+**El ingeniero es el único que puede aprobar una transición de fase.**
+La IA genera. El ingeniero valida. La validación no es automática.
+
+**Un documento no está validado hasta que el ingeniero lo marque explícitamente como tal.**
+El ingeniero señala la validación mediante:
+- Añadir `**Status: Validated**` al inicio del documento, o
+- Avanzar el workflow mediante una instrucción explícita
+
+**Las notas de revisión deben resolverse antes de avanzar.**
+Si existe una sección `## Review Notes` en una spec con ítems `critical` sin resolver,
+esa spec no puede avanzar a la siguiente fase.
+
+---
+
+## V. Higiene de Contexto
+
+**Cada sesión de implementación comienza con un contexto limpio.**
+Antes de codificar, cierra todos los chats de IA activos. Abre una sesión nueva.
+Carga solo:
 1. `docs/spec/engineering/[feature]-engineering.md`
 2. `docs/spec/tasks/[feature]-tasks.md`
-3. ADRs with `status: accepted` relevant to the feature
+3. ADRs con `status: accepted` relevantes para la feature
 
-**Do not load product docs, architecture overviews, or unrelated specs into an implementation session.**
-High-level context contaminates implementation-level reasoning and degrades output quality.
+**No cargues documentos de producto, visiones generales de arquitectura o specs no relacionadas en una sesión de implementación.**
+El contexto de alto nivel contamina el razonamiento a nivel de implementación y degrada la calidad de la salida.
 
 ---
 
-## VI. Architecture Decision Records
+## VI. Registros de Decisiones de Arquitectura
 
-**Every significant technical decision must be recorded as an ADR.**
-A decision is significant if it:
-- affects the technology stack
-- changes a data model
-- introduces a new external dependency
-- contradicts or supersedes a previous decision
+**Cada decisión técnica significativa debe registrarse como un ADR.**
+Una decisión es significativa si:
+- afecta el stack tecnológico
+- cambia un modelo de datos
+- introduce una nueva dependencia externa
+- contradice o reemplaza una decisión anterior
 
-**ADRs are immutable once accepted.**
-An accepted ADR is never edited. If a decision changes, a new ADR is created
-with `supersedes: ADR-[previous-id]` and the old one is updated to `status: superseded`.
+**Los ADRs son inmutables una vez aceptados.**
+Un ADR aceptado nunca se edita. Si una decisión cambia, se crea un nuevo ADR
+con `supersedes: ADR-[id-anterior]` y el anterior se actualiza a `status: superseded`.
 
-**The AI must load accepted ADRs at the start of every architecture or engineering session.**
-Rules defined in ADRs are binding constraints, not suggestions.
+**La IA debe cargar los ADRs aceptados al inicio de cada sesión de arquitectura o ingeniería.**
+Las reglas definidas en los ADRs son restricciones vinculantes, no sugerencias.

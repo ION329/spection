@@ -2,7 +2,7 @@
 id: ADR-000
 status: proposed
 date: YYYY-MM-DD
-rule: "Instrucción ejecutable en una sola oración que la IA debe respetar en todas las sesiones futuras. Ejemplo: Always use PostgreSQL. Never use MongoDB."
+rule: "Instrucción ejecutable en una sola oración que la IA debe respetar en todas las sesiones futuras. Ejemplo: Siempre usar PostgreSQL. Nunca usar MongoDB."
 supersedes: null
 ---
 
@@ -14,9 +14,9 @@ supersedes: null
 - supersedes: null si es un ADR nuevo, o el id del ADR que reemplaza (ej. ADR-002)
 Guarda este archivo como: docs/spec/decisions/ADR-[NNN]-[titulo-en-kebab-case].md -->
 
-# Architecture Decision Record: [Título de la Decisión]
+# Registro de Decisión de Arquitectura: [Título de la Decisión]
 
-## Context
+## Contexto
 
 <!-- Instrucción: Describe la situación que fuerza esta decisión. Responde:
 - ¿Qué problema o necesidad técnica existe?
@@ -24,7 +24,7 @@ Guarda este archivo como: docs/spec/decisions/ADR-[NNN]-[titulo-en-kebab-case].m
 - ¿Por qué es necesario tomar una decisión ahora?
 Escribe 2-4 párrafos. Sé específico con el contexto del proyecto, no genérico. -->
 
-## Options Considered
+## Opciones Consideradas
 
 <!-- Instrucción: Lista entre 2 y 4 alternativas que fueron evaluadas.
 Para cada opción usa este formato:
@@ -37,14 +37,14 @@ Para cada opción usa este formato:
 No incluyas opciones que no fueron genuinamente consideradas.
 Si solo existe una opción viable, documenta por qué las demás fueron descartadas antes de la evaluación. -->
 
-## Decision
+## Decisión
 
 <!-- Instrucción: Declara la decisión tomada en una oración directa.
 Formato: "Se elige [opción] porque [razón principal]."
 Luego explica en 1-3 párrafos adicionales el razonamiento completo.
 La decisión debe ser la misma instrucción que aparece en el campo `rule` del YAML. -->
 
-## Consequences
+## Consecuencias
 
 <!-- Instrucción: Describe el impacto de esta decisión en dos partes:
 

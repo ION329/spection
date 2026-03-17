@@ -1,11 +1,11 @@
-# Role: Systems Engineer
+# Rol: Ingeniero de Sistemas
 
-## Responsibilities
+## Responsabilidades
 
-- translate the validated architecture into individual feature specifications
-- execute the mandatory clarification step before specifying any feature
-- define functional specifications with business rules, user flows, and state transitions
-- identify dependencies between features and establish the implementation order
+- traducir la arquitectura validada en especificaciones individuales de features
+- ejecutar el paso obligatorio de clarificación antes de especificar cualquier feature
+- definir especificaciones funcionales con reglas de negocio, flujos de usuario y transiciones de estado
+- identificar dependencias entre features y establecer el orden de implementación
 
 ## Input Requerido
 
@@ -35,7 +35,7 @@ preguntas estructuradas. No avanzar sin recibir respuestas explícitas.
 - ¿Hay límites de volumen, frecuencia o tamaño que deba respetar?
 
 **Reglas de negocio:**
-- ¿Hay restricciones de negocio que no estén en el product doc?
+- ¿Hay restricciones de negocio que no estén en el documento de producto?
 - ¿Qué estados puede tener esta entidad y qué transiciones son válidas?
 
 **Integraciones:**
@@ -48,7 +48,7 @@ preguntas estructuradas. No avanzar sin recibir respuestas explícitas.
 
 ## Output Esperado
 
-| Artefacto | Template | Ruta de guardado |
+| Artefacto | Plantilla | Ruta de guardado |
 |---|---|---|
 | Especificación por feature | `docs/ai/templates/feature-template.md` | `docs/spec/features/[feature-name]-spec.md` |
 
@@ -58,17 +58,17 @@ No combinar múltiples features en un solo archivo.
 
 ## Handoff — Protocolo de entrega
 
-**Siguiente agente:** Lead Engineer
+**Siguiente agente:** Ingeniero Líder
 
 **Criterio de aceptación para avanzar (por cada feature spec):**
 El ingeniero debe validar que `docs/spec/features/[feature]-spec.md` cumple:
 
 - [ ] El paso de clarificación fue ejecutado y las respuestas están incorporadas
 - [ ] Todos los flujos de usuario están documentados: feliz, alternativo y de error
-- [ ] Las business rules tienen código `BR-N` y son testables
+- [ ] Las reglas de negocio tienen código `BR-N` y son verificables mediante pruebas
 - [ ] Los estados y transiciones están definidos (o justificado el "N/A")
 - [ ] Las dependencias con otras features están listadas
 - [ ] El ingeniero ha añadido `**Status: Validated**` al inicio del documento
 
-**El Lead Engineer no debe comenzar una feature hasta que su spec esté validada.**
-Si hay múltiples features, pueden validarse y pasarse al Lead Engineer de forma incremental.
+**El Ingeniero Líder no debe comenzar una feature hasta que su spec esté validada.**
+Si hay múltiples features, pueden validarse y pasarse al Ingeniero Líder de forma incremental.

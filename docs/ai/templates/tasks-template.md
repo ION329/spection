@@ -1,20 +1,20 @@
-# Tasks: [Feature Name]
+# Tareas: [Nombre de la Feature]
 
 <!-- Instrucción: Este archivo desglosa docs/spec/engineering/[feature]-engineering.md
 en tareas atómicas y accionables, ordenadas por dependencias.
 Guarda este archivo como: docs/spec/tasks/[feature-name]-tasks.md
-Genera este archivo inmediatamente después de completar el engineering spec.
+Genera este archivo inmediatamente después de completar la spec de ingeniería.
 [P] indica tareas que pueden ejecutarse en paralelo con la tarea anterior del mismo nivel. -->
 
 **Feature:** [feature-name]-engineering.md
-**Status:** pending | in-progress | completed
+**Estado:** pendiente | en-progreso | completado
 
 ---
 
-## Task List
+## Lista de Tareas
 
 <!-- Instrucción: Ordena las tareas siguiendo esta secuencia de dependencias:
-infrastructure → backend → frontend → tests
+infraestructura → backend → frontend → pruebas
 Numera las tareas en el orden exacto en que deben ejecutarse.
 Marca con [P] las tareas que pueden ejecutarse en paralelo con la tarea inmediatamente anterior
 del mismo nivel de dependencia. Una tarea es paralelizable cuando no consume el output
@@ -22,96 +22,96 @@ de su tarea hermana, solo del mismo padre o de una fase anterior.
 
 Usa el siguiente formato para cada tarea: -->
 
-### Phase 1 — Infrastructure
+### Fase 1 — Infraestructura
 
 - [ ] **TASK-01** — [Descripción de la tarea de infraestructura]
-  - Type: `infra`
-  - Depends on: —
-  - Detail: [qué crear, configurar o provisionar exactamente]
+  - Tipo: `infra`
+  - Depende de: —
+  - Detalle: [qué crear, configurar o provisionar exactamente]
 
 - [ ] **TASK-02** — [P] [Segunda tarea de infraestructura paralelizable]
-  - Type: `infra`
-  - Depends on: —
-  - Detail: [detalle]
+  - Tipo: `infra`
+  - Depende de: —
+  - Detalle: [detalle]
 
-### Phase 2 — Backend
+### Fase 2 — Backend
 
 <!-- Instrucción: Lista las tareas de backend en orden. Empieza por modelos/entidades,
 luego repositorios o acceso a datos, luego servicios/lógica de negocio, luego controladores/handlers,
 y por último rutas o registro de endpoints. -->
 
 - [ ] **TASK-03** — [Crear modelo o entidad de base de datos]
-  - Type: `backend`
-  - Depends on: TASK-01
-  - Detail: [campos, tipos, migraciones necesarias según el database schema del engineering spec]
+  - Tipo: `backend`
+  - Depende de: TASK-01
+  - Detalle: [campos, tipos, migraciones necesarias según el esquema de BD de la spec de ingeniería]
 
 - [ ] **TASK-04** — [Implementar lógica de negocio o servicio]
-  - Type: `backend`
-  - Depends on: TASK-03
-  - Detail: [reglas de negocio que implementa, referencia a BR-N de la feature spec]
+  - Tipo: `backend`
+  - Depende de: TASK-03
+  - Detalle: [reglas de negocio que implementa, referencia a BR-N de la feature spec]
 
 - [ ] **TASK-05** — [P] [Implementar otro servicio independiente paralelizable]
-  - Type: `backend`
-  - Depends on: TASK-03
-  - Detail: [detalle]
+  - Tipo: `backend`
+  - Depende de: TASK-03
+  - Detalle: [detalle]
 
 - [ ] **TASK-06** — [Implementar endpoint o handler]
-  - Type: `backend`
-  - Depends on: TASK-04, TASK-05
-  - Detail: [método HTTP, ruta, contrato según el API contract del engineering spec]
+  - Tipo: `backend`
+  - Depende de: TASK-04, TASK-05
+  - Detalle: [método HTTP, ruta, contrato según el contrato de API de la spec de ingeniería]
 
-### Phase 3 — Frontend
+### Fase 3 — Frontend
 
 <!-- Instrucción: Lista las tareas de frontend en orden. Empieza por componentes atómicos,
 luego componentes compuestos, luego vistas completas, luego integración con el estado global,
 y por último conexión con la API. -->
 
 - [ ] **TASK-07** — [Crear componente base o átomo]
-  - Type: `frontend`
-  - Depends on: —
-  - Detail: [props, estados, comportamiento según UI Components del engineering spec]
+  - Tipo: `frontend`
+  - Depende de: —
+  - Detalle: [props, estados, comportamiento según Componentes de UI de la spec de ingeniería]
 
 - [ ] **TASK-08** — [P] [Crear otro componente base independiente]
-  - Type: `frontend`
-  - Depends on: —
-  - Detail: [detalle]
+  - Tipo: `frontend`
+  - Depende de: —
+  - Detalle: [detalle]
 
 - [ ] **TASK-09** — [Implementar vista o página]
-  - Type: `frontend`
-  - Depends on: TASK-07, TASK-08
-  - Detail: [qué componentes compone, qué estado consume, qué flujo implementa]
+  - Tipo: `frontend`
+  - Depende de: TASK-07, TASK-08
+  - Detalle: [qué componentes compone, qué estado consume, qué flujo implementa]
 
 - [ ] **TASK-10** — [Conectar con API y estado global]
-  - Type: `frontend`
-  - Depends on: TASK-06, TASK-09
-  - Detail: [qué endpoints consume, qué acciones del store dispara]
+  - Tipo: `frontend`
+  - Depende de: TASK-06, TASK-09
+  - Detalle: [qué endpoints consume, qué acciones del store dispara]
 
-### Phase 4 — Tests
+### Fase 4 — Pruebas
 
-<!-- Instrucción: Genera una tarea de test por cada caso definido en la sección
-"Test Plan" del engineering spec. No inventes casos que no estén en el test plan.
-Los tests de backend y frontend pueden marcarse [P] entre sí si son independientes. -->
+<!-- Instrucción: Genera una tarea de prueba por cada caso definido en la sección
+"Plan de Pruebas" de la spec de ingeniería. No inventes casos que no estén en el plan de pruebas.
+Las pruebas de backend y frontend pueden marcarse [P] entre sí si son independientes. -->
 
-- [ ] **TASK-11** — [Unit tests para [servicio o función]]
-  - Type: `test`
-  - Depends on: TASK-04
-  - Detail: [casos a cubrir según el Test Plan del engineering spec]
+- [ ] **TASK-11** — [Pruebas unitarias para [servicio o función]]
+  - Tipo: `test`
+  - Depende de: TASK-04
+  - Detalle: [casos a cubrir según el Plan de Pruebas de la spec de ingeniería]
 
-- [ ] **TASK-12** — [P] [Unit tests para [componente]]
-  - Type: `test`
-  - Depends on: TASK-07
-  - Detail: [casos a cubrir]
+- [ ] **TASK-12** — [P] [Pruebas unitarias para [componente]]
+  - Tipo: `test`
+  - Depende de: TASK-07
+  - Detalle: [casos a cubrir]
 
-- [ ] **TASK-13** — [Integration tests para [endpoint o flujo completo]]
-  - Type: `test`
-  - Depends on: TASK-10, TASK-11, TASK-12
-  - Detail: [flujo de extremo a extremo a probar, casos límite según el Test Plan]
+- [ ] **TASK-13** — [Pruebas de integración para [endpoint o flujo completo]]
+  - Tipo: `test`
+  - Depende de: TASK-10, TASK-11, TASK-12
+  - Detalle: [flujo de extremo a extremo a probar, casos límite según el Plan de Pruebas]
 
 ---
 
-## Progress
+## Progreso
 
 <!-- Instrucción: No modifiques esta sección manualmente. Actualízala al finalizar cada tarea.
 Formato: [completadas] / [total] tareas -->
 
-Completed: 0 / 0
+Completadas: 0 / 0
